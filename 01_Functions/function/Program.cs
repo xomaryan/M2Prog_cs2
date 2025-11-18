@@ -4,6 +4,25 @@ namespace function
 {
         internal class Program
     {
+        string[] vragen = new string[]{
+            "What 1997 N64 vaideo game feature James Bond and is named after the 1995 film?",
+            "What arcade game was named Puckman in Japan?"
+        };
+        
+
+        internal string GetVraag(int vraagIndex)
+        {
+            return vragen[vraagIndex];
+        }
+
+        internal string GetRandomVraag()
+        {
+            Random random = new Random();
+            int random1 = random.Next(vragen.Length);
+            return GetVraag(random1);
+        }
+        
+
         static void Main(string[] args)
         {
             Program program = new Program(); //Variable van type Program is program.    //Program() is function constructor.
@@ -18,6 +37,13 @@ namespace function
             Vraag3();
             Vraag4();
             Vraag5();
+            string antwoord7 = Vraag7();
+            Console.WriteLine(antwoord7);
+            string vraag0 = GetVraag(0);
+            Console.WriteLine(vraag0);
+            string randomVraag = GetRandomVraag(); 
+            Console.WriteLine(randomVraag); 
+            
         }
 
         internal void Vraag1()
@@ -60,5 +86,15 @@ namespace function
 
             Console.WriteLine(antwoord);
         }
+
+        internal string Vraag7()
+        {
+            Console.WriteLine("How long do you think you'd survive in a zombie apocalypse?");
+            string antwoord = Console.ReadLine();
+
+            return antwoord;
+
+        }
+        
     }
 }
