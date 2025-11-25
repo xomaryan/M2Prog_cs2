@@ -4,11 +4,11 @@ namespace function
 {
         internal class Program
     {
+
         string[] vragen = new string[]{
             "What 1997 N64 vaideo game feature James Bond and is named after the 1995 film?",
             "What arcade game was named Puckman in Japan?"
         };
-        
 
         internal string GetVraag(int vraagIndex)
         {
@@ -21,7 +21,7 @@ namespace function
             int random1 = random.Next(vragen.Length);
             return GetVraag(random1);
         }
-        
+    
 
         static void Main(string[] args)
         {
@@ -43,6 +43,8 @@ namespace function
             Console.WriteLine(vraag0);
             string randomVraag = GetRandomVraag(); 
             Console.WriteLine(randomVraag); 
+            string antwoord05 = AskRandomQuestion();
+            Console.WriteLine(antwoord05);
             
         }
 
@@ -95,6 +97,14 @@ namespace function
             return antwoord;
 
         }
+        
+        internal string AskRandomQuestion()
+        {
+            Console.WriteLine("What is your favorite color?");
+            string GetRandomVraag = Console.ReadLine();
+
+            return GetRandomVraag;
+        } 
         
     }
 }
