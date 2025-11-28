@@ -48,7 +48,7 @@ namespace function
             
         }
 
-        internal void Vraag1()
+        internal void Vraag1() 
         {
             Console.WriteLine("How long do you think you'd survive in a zombie apocalypse?");
             string antwoord = Console.ReadLine();
