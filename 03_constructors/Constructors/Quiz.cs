@@ -9,4 +9,14 @@ class Quiz
         ingevuldenAntwoorden = new QuizVraagAntwoord[ingevulden];
     }
 
+    internal void VoegVraagToeopIndex( int index, QuizVraag vraag )
+    {
+        vragen[index] = vraag;
+
+    }
+    internal void VoegVraagToeopIndex1(int index, string vraag, string antwoord)
+    {
+        vragen[index] = vraag;
+    }
+
 }
