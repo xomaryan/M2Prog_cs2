@@ -13,16 +13,17 @@
         quiz.VoegVraagToeopIndez(0, quizVraag);
     }
 
-    internal Quiz()
+    internal Quiz(int aantalVragen)
     {
         vragen = new QuizVraag[aantalVragen];
-        vragen = new QuizVraag[ingevuldenAntwoorden];
+        ingevuldenAnwoorden = new string[aantalVragen];
     }
 
-    internal QuizVraagAntwoord(QuizVraag vraag)
+    internal QuizVraagAntwoord(QuizVraag vraag )
     {
         vraag = vraag;
         goed = false;
     }
+
     
 }
