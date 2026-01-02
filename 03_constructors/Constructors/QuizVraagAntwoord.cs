@@ -1,3 +1,6 @@
+using System.Data;
+using System.Runtime.CompilerServices;
+
 class QuizVraagAntwoord
 {
     
@@ -5,9 +8,9 @@ class QuizVraagAntwoord
     internal bool goed;
 
     
-    internal QuizVraagAntwoord(QuizVraag vraag)
+    internal QuizVraagAntwoord(QuizVraag deVraag)
     {
-        this.vraag= vraag;
-        goed = false;
+        this.vraag = deVraag;
+        this.goed = false;
     }
 }
