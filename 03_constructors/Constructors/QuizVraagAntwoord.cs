@@ -1,5 +1,13 @@
 class QuizVraagAntwoord
 {
-    internal QuizVraagAntwoord vraag;
+    
+    internal QuizVraag vraag;
     internal bool goed;
+
+    
+    internal QuizVraagAntwoord(QuizVraag vraag)
+    {
+        this.vraag= vraag;
+        goed = false;
+    }
 }
