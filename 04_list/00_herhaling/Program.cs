@@ -1,4 +1,4 @@
-﻿namespace _04_list;
+﻿﻿namespace _04_list;
 
 class Program
 {
