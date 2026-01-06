@@ -1,7 +1,10 @@
-﻿namespace Dictionaries;
+﻿using System.Runtime.InteropServices.Marshalling;
+
+namespace Dictionaries;
 
 class Program
 {
+    Dictionary<string, Room> rooms = new Dictionary<string, Room>();
     static void Main(string[] args)
     {
         Program program = new Program();
@@ -37,5 +40,88 @@ class Program
         {
             Console.WriteLine(value);
         }  
+
+        Room start = new Room(0, 0, [
+            "xxxxx",
+            "x   x",
+            "x   x",
+            "x   x",
+            "xxxxx"
+        ]);
+        rooms.Add(start.GetRoomLocationKey(), start);
+
+        Room start2 = new Room(0, 1, [
+            "xxxxx",
+            "x   x",
+            "x   x",
+            "x   x",
+            "xxxxx"
+        ]);
+         rooms.Add(start2.GetRoomLocationKey(), start2);
+        
+        Room start3 = new Room(1, 1, [
+            "xxxxx",
+            "x   x",
+            "x   x",
+            "x   x",
+            "xxxxx"
+        ]);
+        rooms.Add(start3.GetRoomLocationKey(), start3);
+
+        Room start4 = new Room(1, 0, [
+            "xxxxx",
+            "x   x",
+            "x   x",
+            "x   x",
+            "xxxxx"
+        ]);
+        rooms.Add(start4.GetRoomLocationKey(), start4);
+
+        ShowRoom(0, 0);
+        ShowRoom(0, 1);
+        ShowRoom(1, 1);
+        ShowRoom(1, 0);
+        ShowRoom(2, 0);
+    }
+    private void ShowRoom(int x, int y)
+    {   
+        bool hasRoom = rooms.ContainsKey($"{x}, {y}");
+
+        if (hasRoom)
+        {
+            Room room = rooms[$"{x}, {y}"];
+            
+            Console.WriteLine($"You are in room {x}, {y}");
+            foreach (string r in room.level)
+            {
+                Console.WriteLine(r);
+            }
+        }
+        else
+        {
+            Console.WriteLine("Error room does not exist");
+        }
+        
     }
 }
+
+class Room
+{
+    internal int x, y;
+    internal string[] level;
+
+    internal Room(int x, int y, string[] level)
+    {
+        this.x = x;
+        this.y = y;
+        this.level = level;
+    }
+
+    internal string GetRoomLocationKey()
+    {
+        return $"{x}, {y}";
+    }
+}
+
+
+
