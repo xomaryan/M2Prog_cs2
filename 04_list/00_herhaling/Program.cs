@@ -1,4 +1,4 @@
-﻿﻿namespace _04_list;
+﻿namespace _04_list;
 
 class Program
 {
@@ -33,9 +33,12 @@ class Program
         };
         foreach (Formulier formulier in formulieren)
         {
+            
+        }
+        {
            
         }
-        for (int i = prijzen.Length - 1; i >= 0;) 
+        for (int i = prijzen.Length - 1; i >= 0; i--) 
         {
             Console.WriteLine(prijzen[i]);
             Console.WriteLine(artiekelen[i]);

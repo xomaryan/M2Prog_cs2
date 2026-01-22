@@ -21,7 +21,7 @@ class Program
         
        
         charactersList.Add("Minjon");
-        foreach (string characterList in characterslist)
+        foreach (string characterList in charactersList)
         {
             Console.WriteLine(characterList);
         }
