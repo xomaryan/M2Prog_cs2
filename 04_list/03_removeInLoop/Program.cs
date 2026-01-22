@@ -15,7 +15,8 @@ class Program
             Pickup pickup = new Pickup()
             {
                 x = i,
-                y = i
+                y = i,
+                id = i
             };
             pickups.Add(pickup);
         }
@@ -34,6 +35,12 @@ class Program
                 pickups.RemoveAt(i);
             }
         }
+        pickups.Reverse();
+
+        foreach (var p in pickups)
+        {
+            Console.WriteLine($"pickups {p.id} is still there");
+        }
             
         
 
@@ -41,6 +48,6 @@ class Program
     class Pickup
     {
         internal int x, y;
-
+        internal int id;
     }
 }
