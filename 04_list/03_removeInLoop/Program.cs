@@ -15,8 +15,7 @@ class Program
             Pickup pickup = new Pickup()
             {
                 x = i,
-                y = i,
-                id = i
+                y = i
             };
             pickups.Add(pickup);
         }
@@ -28,19 +27,20 @@ class Program
         //    }
         //}
 
-        for (int i = pickups.Count - 1; i >= 0; i--)
+        for (int i = pickups.Count-1; i >= 0; i--)
         {
-            if (pickups[i].x == 4)
+            Pickup pickup = pickups[i];
+            if (pickup.x == 4)
             {
-                pickups.RemoveAt(i);
+                pickups.Remove(pickup);
+                Console.WriteLine($"{i}: picked up");
+            }
+            else
+            {
+                Console.WriteLine($"{i}: still here");
             }
         }
-        pickups.Reverse();
 
-        foreach (var p in pickups)
-        {
-            Console.WriteLine($"pickups {p.id} is still there");
-        }
             
         
 
@@ -48,6 +48,5 @@ class Program
     class Pickup
     {
         internal int x, y;
-        internal int id;
     }
 }
