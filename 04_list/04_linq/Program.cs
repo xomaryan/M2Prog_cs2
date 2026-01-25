@@ -12,11 +12,12 @@ class Program
 
     internal void Run()
     {
-        List<Mob> mobs = new List<Mob>();
-        for (int i = 0; i < 3; i++)
+        List<Mob> mobs = new List<Mob>()
         {
-            mobs.Add(new Mob());
-        }
+            new Mob(){name = "orc"},
+            new Mob(){name="goblin"},
+            new Mob(){name="troll"}
+        };
 
         Random random = new Random();
 
@@ -24,8 +25,8 @@ class Program
         {
             foreach (Mob mob in mobs)
             {
-                int kans = random.Next(0, 100);
-                if (kans < 30)
+                int getal = random.Next(100);
+                if (getal < 10)
                 {
                     mob.TakeDamage(1);
                 }
@@ -33,6 +34,11 @@ class Program
         }
 
         List<Mob> defeated = mobs.Where(mob=>mob.isDead).ToList();
+
+        foreach (Mob mob in defeated)
+        {
+            Console.WriteLine("A mob was defeated! " + mob.name);
+        }
         Console.WriteLine(defeated.Count);
     }
 }
@@ -41,6 +47,7 @@ class Mob
 {
     internal bool isDead;
     internal int hp = 10;
+    internal string name;
 
     public void TakeDamage(int damage)
     {
