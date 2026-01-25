@@ -1,4 +1,6 @@
-﻿namespace Lists;
+﻿using System.Linq.Expressions;
+
+namespace Lists;
 
 class Program
 {
@@ -10,25 +12,36 @@ class Program
     }
     private void Run()
     {
-        string[] characters = {"Pac-Man","Samus","Crash Bandicoot","Spyro the Dragon",
-        "Donkey Kong","Mario","Luigi","Astro","Solid Snake","Master Chief","Kratos","Sonic the Hedgehog","Link"
+        string[] characters = new string[]
+        {
+            "Pac-Man",
+            "Samus",
+            "Crash Bandicoot",
+            "Spyro the Dragon",
+            "Donkey Kong",
+            "Mario",
+            "Luigi",
+            "Astro",
+            "Solid Snake",
+            "Master Chief",
+            "Kratos",
+            "Sonic the Hedgehog",
+            "Link"
         };
 
-        foreach (string character in characters)
+        List<string> charactersList = new List<string>();
+        charactersList.Add("Pikachu");
+        for (int i = 0; i < characters.Length; i++)
+        {
+            charactersList.Add(characters[i]);
+        }
+        for ( int i = 0; i < charactersList.Count; i++)
+        {
+            Console.WriteLine(charactersList[i]);
+        }
+        foreach (string character in charactersList)
         {
             Console.WriteLine(character);
         }
-        
-       
-        charactersList.Add("Minjon");
-        foreach (string characterList in charactersList)
-        {
-            Console.WriteLine(characterList);
-        }
-       
-       
-       
-
-        
     }
 }
